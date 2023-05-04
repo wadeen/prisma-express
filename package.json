@@ -1,0 +1,27 @@
+{
+  "name": "prisma-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wadeen/prisma-express.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wadeen/prisma-express/issues"
+  },
+  "homepage": "https://github.com/wadeen/prisma-express#readme",
+  "dependencies": {
+    "@prisma/client": "^4.13.0",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22",
+    "prisma": "^4.13.0"
+  }
+}
