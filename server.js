@@ -1,11 +1,11 @@
 const { PrismaClient } = require("@prisma/client");
 const express = require("express");
 const app = express();
-
 const PORT = 3000;
+
 const prisma = new PrismaClient();
 
-// Middleware\
+// Middleware
 app.use(express.json());
 
 // データの取得
