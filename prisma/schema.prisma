@@ -13,6 +13,6 @@ datasource db {
 model Posts {
   id Int @default(autoincrement()) @id
   createdAt DateTime @default(now())
-  title String 
-  body String
+  text String 
+  checked Boolean @default(false)
 }

@@ -5,7 +5,7 @@ const app = express();
 const PORT = 3000;
 const prisma = new PrismaClient();
 
-// Middleware\
+// Middleware
 app.use(express.json());
 
 // データの取得
@@ -15,7 +15,7 @@ app.get("/posts", async (_, res) => {
 });
 
 // 例：データの取得をSQLで書いた場合
-// app.get("/users", (_, res) => {
+// app.get("/users", (_req, res) => {
 //   pool.query("SELECT * FROM users", (err, results) => {
 //     if (err) throw err;
 //     return res.status(200).json(results.rows);
@@ -36,11 +36,11 @@ app.get("/posts/:id", async (req, res) => {
 
 // データの作成
 app.post("/posts", async (req, res) => {
-  const { title, body } = req.body;
+  const { text, checked } = req.body;
   const posts = await prisma.posts.create({
     data: {
-      title,
-      body,
+      text,
+      checked,
     },
   });
   return res.json(posts);
@@ -49,14 +49,15 @@ app.post("/posts", async (req, res) => {
 // データの変更
 app.put("/posts/:id", async (req, res) => {
   const { id } = req.params;
-  const { body } = req.body;
+  const { text, checked } = req.body;
 
   const updatedPost = await prisma.posts.update({
     where: {
       id: Number(id),
     },
     data: {
-      body,
+      text,
+      checked,
     },
   });
   return res.json(updatedPost);
